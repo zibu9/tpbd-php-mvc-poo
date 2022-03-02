@@ -1,0 +1,21 @@
+{
+    "name": "zibu/bddapp",
+    "type": "project",
+    "description": "MVC PHP.",
+    "keywords": ["MVC", "php poo"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/",
+            "App\\": "app/",
+            "Database\\": "database/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zibu",
+            "email": "kabuyajunior082@gmail.com"
+        }
+    ],
+    "require": {}
+}
