@@ -32,6 +32,8 @@ $routeur->post('/chien/delete/:id', 'App\Controllers\ChienController@destroy');
 $routeur->get('/nouveau-chien', 'App\Controllers\ChienController@create');
 $routeur->post('/chien/create', 'App\Controllers\ChienController@createPost');
 
+$routeur->get('/concours', 'App\Controllers\ConcourController@index');
+
 
 $routeur->get('/login', 'App\Controllers\UserController@login');
 $routeur->post('/login', 'App\Controllers\UserController@loginPost');

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-        <a href="<?=BASE_URL?>nouveau-chien" class="btn btn-success mt-1">Nouveau Chien</a>
+            <a href="<?=BASE_URL?>nouveau-chien" class="btn btn-success mt-1">Nouveau Chien</a>
             <table class="table">
                 <thead>
                 <tr>

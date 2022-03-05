@@ -37,18 +37,39 @@
                             <td scope="col"><?=$membre->sexe=='M'? 'Masculin' : 'feminin' ?></td>
                             <td scope="col"><?=$membre->adresse ?></td>
                             <td scope="col"><?=$membre->tel ?></td>
-                            <td scope="col">
-                                <a href="<?=BASE_URL?>membre/<?=$membre->numero ?>" class="btn btn-primary">Voir</a>                
-                                <a href="" class="btn btn-warning">Modifier</a>                
-                                <form action="" method="POST" class="d-inline">
-                                    <button type="submit" class="btn btn-danger">Supprimer</button>
-                                </form>
-                            </td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>
             </table>
-            <a href="<?=BASE_URL?>gestion-des-membres" class="btn btn-secondary">Retourner en arrière</a>
         </div>
+        <div class="col-md-10">
+        <h2>Chiens parente</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Matricule</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Sexe</th>
+                    <th scope="col">Race</th>
+                    <th scope="col">Naissance</th>
+                    <th scope="col">Decede</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($params['chien']->chienParente() as $chien) :?>
+                        <tr>
+                            <th scope="row"><?=$chien->matricule ?></th>
+                            <td scope="col"><?=$chien->nom ?></td>
+                            <td scope="col"><?=$chien->sexe=='M' ? 'Chien' : 'Chienne' ?></td>
+                            <td scope="col"><?=$chien->race ?></td>
+                            <td scope="col"><?=$chien->date_naissance ?></td>
+                            <td scope="col"><?=is_null($chien->date_deces) ? 'Non' : 'Oui' ?></td>
+                        </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+            <a href="<?=BASE_URL?>gestion-des-chiens" class="btn btn-secondary">Retourner en arrière</a>
+        </div>
+        
     </div>
 </div>

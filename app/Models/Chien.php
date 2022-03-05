@@ -21,6 +21,11 @@ class Chien extends Model {
         ", [$this->matricule]);        
     }
 
+    public function chienParente(){
+        return $this->query("SELECT c.* FROM chiens c INNER JOIN parente pr ON(c.matricule = pr.chien_parente) WHERE pr.chien = ?;
+        ", [$this->matricule]);           
+    }
+
     public function create(array $data, ?array $chien_parente = null, ?array $chien_personne = null, ?array $numero_personne = null)
     {
         parent::create($data);
