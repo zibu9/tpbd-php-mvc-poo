@@ -39,6 +39,7 @@ $routeur->get('/concour/:id', 'App\Controllers\ConcourController@concour');
 $routeur->post('/concour/delete/:id', 'App\Controllers\ConcourController@destroy');
 $routeur->get('/ajouter-participation/:id', 'App\Controllers\ConcourController@add_participant');
 $routeur->post('/participants', 'App\Controllers\ConcourController@addPost');
+$routeur->get('/ajouter-vainqueur/:id', 'App\Controllers\ConcourController@add_vainqueur');
 
 
 $routeur->get('/login', 'App\Controllers\UserController@login');

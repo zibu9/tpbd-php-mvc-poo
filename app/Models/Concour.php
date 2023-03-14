@@ -16,6 +16,14 @@ class Concour extends Model {
         return true;
     }
 
+    public function getAll($id)
+    {
+        return $this->query('SELECT c.* FROM chiens c 
+        INNER JOIN participer p 
+        ON(p.chien_matricule = c.matricule) 
+        WHERE p.concour_id = ?', [$id]);
+    }
+
     public function getParticipants()
     {
         return $this->query('SELECT c.nom AS cnom, c.matricule, c.race ,prs.numero, prs.nom AS pnom, prs.postnom, prs.prenom, prs.adresse, cp.* FROM chiens c 

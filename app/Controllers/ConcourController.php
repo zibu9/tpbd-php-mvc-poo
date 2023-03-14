@@ -77,5 +77,16 @@ class ConcourController extends BaseController{
         }
     }
 
+    public function add_vainqueur(int $id)
+    {
+        $this->isAdmin();
+        $cncr = new Concour($this->getDB());
+        $concour = $cncr->findById($id);
+        $chiens = $cncr->getAll($id);
+
+        return $this->view('concours.ad', compact('concour', 'chiens'));
+
+    }
+
     
 }

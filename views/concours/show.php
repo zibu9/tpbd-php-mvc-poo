@@ -17,7 +17,7 @@
                     </tr>
                 </tbody>
             </table>
-            <?php if($params['concour']->date_concours >= date('Y-m-d')) : ?>
+            <?php if($params['concour']->date_concours > date('Y-m-d')) : ?>
                 <a href="<?=BASE_URL?>ajouter-participation/<?=$params['concour']->id?>" class="btn btn-success mt-1">Ajouter les participants</a>
         </div>
         <div class="col-md-12">
@@ -43,6 +43,8 @@
                 <?php endforeach; ?>
             </table>
         </div>
+        <?php elseif($params['concour']->date_concours == date('Y-m-d')) : ?>
+            <a href="<?=BASE_URL?>ajouter-vainqueur/<?=$params['concour']->id?>" class="btn btn-success mt-1">Choisir le vainqueur</a>
         <?php else: ?>   
         </div> 
         <div class="col-md-12">
