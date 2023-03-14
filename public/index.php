@@ -33,6 +33,12 @@ $routeur->get('/nouveau-chien', 'App\Controllers\ChienController@create');
 $routeur->post('/chien/create', 'App\Controllers\ChienController@createPost');
 
 $routeur->get('/concours', 'App\Controllers\ConcourController@index');
+$routeur->get('/nouveau-concour', 'App\Controllers\ConcourController@create');
+$routeur->post('/concours/create', 'App\Controllers\ConcourController@createPost');
+$routeur->get('/concour/:id', 'App\Controllers\ConcourController@concour');
+$routeur->post('/concour/delete/:id', 'App\Controllers\ConcourController@destroy');
+$routeur->get('/ajouter-participation/:id', 'App\Controllers\ConcourController@add_participant');
+$routeur->post('/participants', 'App\Controllers\ConcourController@addPost');
 
 
 $routeur->get('/login', 'App\Controllers\UserController@login');

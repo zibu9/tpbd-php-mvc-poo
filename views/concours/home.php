@@ -18,6 +18,12 @@
                             <th scope="row"><?=date_format(date_create($concours->date_concours), 'd/m/Y') ?></th>
                             <td scope="col"><?=$concours->ville ?></td>
                             <td scope="col"><?=$concours->type_prix ?></td>
+                            <td scope="col">   
+                                <a href="<?=BASE_URL?>concour/<?=$concours->id ?>" class="btn btn-primary">Voir</a>                
+                                <form action="<?=BASE_URL?>concour/delete/<?=$concours->id ?>" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php $i++; endforeach;?>
                 </tbody>
